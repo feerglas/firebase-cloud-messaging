@@ -14,7 +14,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 const messaging = getMessaging(firebaseApp);
 
 export const fetchToken = (setTokenFound) => {
-  return getToken(messaging, {vapidKey: 'BHGPr3pJQSflJAJtTIVXbmcEXlPV_HP29TZQRcqrGCN10gKIa-ojIJmtvM9kQGcsNKsWIA6ezKFG8Bd6LTjaVc0'}).then((currentToken) => {
+  return getToken(messaging, {vapidKey: 'BEzvU-Qb_JLoWBA7FyCGgfSkGjqM6P4z9pCVs7epMJ22pIYcxy9OhpDJ6kOmt11gLsjqgFD77UG1-bpttb51nkw'}).then((currentToken) => {
     if (currentToken) {
       console.log('current token for client: ', currentToken);
       setTokenFound(true);
