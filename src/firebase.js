@@ -17,12 +17,12 @@ export const fetchToken = (setTokenFound) => {
   return getToken(messaging, {vapidKey: 'BEzvU-Qb_JLoWBA7FyCGgfSkGjqM6P4z9pCVs7epMJ22pIYcxy9OhpDJ6kOmt11gLsjqgFD77UG1-bpttb51nkw'}).then((currentToken) => {
     if (currentToken) {
       console.log('current token for client: ', currentToken);
-      setTokenFound(true);
+      setTokenFound(currentToken);
       // Track the token -> client mapping, by sending to backend server
       // show on the UI that permission is secured
     } else {
       console.log('No registration token available. Request permission to generate one.');
-      setTokenFound(false);
+      setTokenFound('');
       // shows on the UI that permission is required 
     }
   }).catch((err) => {

@@ -8,7 +8,7 @@ function App() {
 
   const [show, setShow] = useState(false);
   const [notification, setNotification] = useState({title: '', body: ''});
-  const [isTokenFound, setTokenFound] = useState(false);
+  const [isTokenFound, setTokenFound] = useState('');
   fetchToken(setTokenFound);
 
   onMessageListener().then(payload => {
@@ -42,8 +42,8 @@ function App() {
           <Toast.Body>{notification.body}</Toast.Body>
         </Toast>
       <header className="App-header">
-        {isTokenFound && <h1> Notification permission enabled 👍🏻 </h1>}
-        {!isTokenFound && <h1> Need notification permission ❗️ </h1>}
+        {isTokenFound.length > 0 && <div><h1> Notification permission enabled 👍🏻</h1><p>{isTokenFound}</p></div>}
+        {isTokenFound.length < 1 && <h1> Need notification permission ❗️ </h1>}
         <Button onClick={() => onShowNotificationClicked()}>Show Toast</Button>
       </header>
       
