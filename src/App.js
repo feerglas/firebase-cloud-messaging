@@ -42,7 +42,12 @@ function App() {
           <Toast.Body>{notification.body}</Toast.Body>
         </Toast>
       <header className="App-header">
-        {isTokenFound.length > 0 && <div><h1> Notification permission enabled 👍🏻</h1><p>{isTokenFound}</p></div>}
+        {isTokenFound.length > 0 &&
+          <div>
+            <h1> Notification permission enabled 👍🏻</h1>
+            <p style={{"font-size": "8px", "wordBreak": "break-all"}}>{isTokenFound}</p>
+          </div>
+        }
         {isTokenFound.length < 1 && <h1> Need notification permission ❗️ </h1>}
         <Button onClick={() => onShowNotificationClicked()}>Show Toast</Button>
       </header>
